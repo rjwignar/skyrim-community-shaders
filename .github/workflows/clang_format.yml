@@ -35,6 +35,11 @@ jobs:
           files: |
             src/Features/*.cpp
             src/Features/*.h
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
       - uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
           source: "."
