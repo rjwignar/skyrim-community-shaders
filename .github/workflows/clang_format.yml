@@ -59,7 +59,7 @@ jobs:
           done
           unset IFS
 
-
+          echo "my_changed_files=$CHANGED_FILES" >> "$GITHUB_ENV"
           echo $CHANGED_FILES > modified_files.txt
           echo "::set-outputs name=all_changed_files::${CHANGED_FILES}"
           echo ${{ steps.changed-files.outputs.all_changed_files }}
@@ -68,7 +68,7 @@ jobs:
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
           # source: ${{ steps.changed-files.outputs.all_changed_files }}
-          source: echo $(cat modified_files.txt)
+          source: "$my_changed_files"
           # source: ARGS
           # source: $CHANGED_FILES
           exclude: "extern include"
