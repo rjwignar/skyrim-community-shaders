@@ -53,12 +53,12 @@ jobs:
           unset IFS
           export CHANGED_FILES=${MODIFIED_FILES_ARRAY[*]}
           echo $CHANGED_FILES
-          echo "::set-outputs name=CHANGED_FILES::$CHANGED_FILES"
+          echo "::set-outputs name=all_changed_files::$CHANGED_FILES"
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
-          source: ${{ steps.changed-files.outputs.CHANGED_FILES }}
+          source: ${{ steps.changed-files.outputs.all_changed_files }}
           # source: ARGS
           # source: $CHANGED_FILES
           exclude: "extern include"
