@@ -46,6 +46,7 @@ jobs:
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
+          
           export CHANGED_FILES
 
           IFS=$',' read -a MODIFIED_FILES_ARRAY <<< "${{ steps.changed-files.outputs.all_changed_files }}"
@@ -58,14 +59,16 @@ jobs:
           done
           unset IFS
 
-          echo $CHANGED_FILES
+
+          echo $CHANGED_FILES > modified_files.txt
           echo "::set-outputs name=all_changed_files::${CHANGED_FILES}"
           echo ${{ steps.changed-files.outputs.all_changed_files }}
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
-          source: ${{ steps.changed-files.outputs.all_changed_files }}
+          # source: ${{ steps.changed-files.outputs.all_changed_files }}
+          source: $(cat modified_files.txt)
           # source: ARGS
           # source: $CHANGED_FILES
           exclude: "extern include"
