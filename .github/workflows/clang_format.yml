@@ -54,6 +54,7 @@ jobs:
           export CHANGED_FILES=${MODIFIED_FILES_ARRAY[*]}
           echo $CHANGED_FILES
           echo "::set-outputs name=all_changed_files::${MODIFIED_FILES_ARRAY[@]}"
+          echo ${{ steps.changed-files.outputs.all_changed_files }}
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
