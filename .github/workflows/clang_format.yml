@@ -63,6 +63,7 @@ jobs:
           echo $CHANGED_FILES > modified_files.txt
           echo "::set-outputs name=all_changed_files::${CHANGED_FILES}"
           echo ${{ steps.changed-files.outputs.all_changed_files }}
+          echo ${{env.my_changed_files}}
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
