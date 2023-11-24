@@ -57,6 +57,7 @@ jobs:
             CHANGED_FILES+=\"
             CHANGED_FILES+=' '
           done
+          CHANGED_FILES="${CHANGED_FILES//\"/'%22'}"
           unset IFS
 
           echo "my_changed_files=$CHANGED_FILES" >> "$GITHUB_ENV"
@@ -70,8 +71,8 @@ jobs:
           changedFiles: ${{env.my_changed_files}}
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
-          # source: ${{ steps.changed-files.outputs.all_changed_files }}
-          source: ${{env.my_changed_files | safe }}
+          source: ${{ steps.changed-files.outputs.all_changed_files }}
+          # source: ${{env.my_changed_files}}
           # source: ${{changedFiles}}
           # source: ARGS
           # source: $CHANGED_FILES
