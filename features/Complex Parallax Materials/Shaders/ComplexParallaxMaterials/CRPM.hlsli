@@ -20,6 +20,7 @@ float GetMipLevel(float2 coords, Texture2D<float4> tex)
 	// Find min of change in u and v across quad: compute du and dv magnitude across quad
 	float2 dTexCoords = dxSize * dxSize + dySize * dySize;
 
+
 	// Standard mipmapping uses max here
 	float minTexCoordDelta = max(dTexCoords.x, dTexCoords.y);
 
