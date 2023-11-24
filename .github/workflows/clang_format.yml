@@ -56,8 +56,8 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
-          # source: ${{ steps.changed-files.outputs.all_changed_files }}
-          source: ARGS
+          source: ${{ steps.changed-files.outputs.all_changed_files }}
+          # source: ARGS
           exclude: "extern include"
           extensions: "h,cpp,c,hlsl,hlsli"
           clangFormatVersion: 16
