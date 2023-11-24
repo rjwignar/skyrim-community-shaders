@@ -11,6 +11,7 @@ struct DistantTreeLighting : Feature
 		return &singleton;
 	}
 
+
 	virtual inline std::string GetName() { return "Tree LOD Lighting"; }
 	virtual inline std::string GetShortName() { return "TreeLODLighting"; }
 
