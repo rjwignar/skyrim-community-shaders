@@ -51,6 +51,7 @@ jobs:
             echo $file
           done
           unset IFS
+          ::set-output name=all_changed_files::${MODIFIED_FILES_ARRAY[*]}
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
