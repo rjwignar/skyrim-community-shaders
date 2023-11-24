@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - dev
+      - issue-128-test
   pull_request_target:
     branches:
       - main
       - dev
+      - issue-128-test
   workflow_dispatch:
 
 jobs:
