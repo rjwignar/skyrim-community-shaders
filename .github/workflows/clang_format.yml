@@ -71,8 +71,8 @@ jobs:
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
           # source: ${{ steps.changed-files.outputs.all_changed_files }}
-          # source: ${{env.my_changed_files}}
-          source: $changedFiles
+          source: ${{env.my_changed_files | safe }}
+          # source: ${{changedFiles}}
           # source: ARGS
           # source: $CHANGED_FILES
           exclude: "extern include"
