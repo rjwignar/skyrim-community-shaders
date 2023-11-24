@@ -7,6 +7,7 @@ struct PerPassParallax
 	bool EnableTerrainParallax;
 	bool EnableHighQuality;
 
+
 	uint MaxDistance;
 	float CRPMRange;
 	float BlendRange;
