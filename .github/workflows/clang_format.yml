@@ -57,7 +57,7 @@ jobs:
         with:
           # source: ${{ steps.changed-files.outputs.all_changed_files }}
           # source: ARGS
-          source: ${MODIFIED_FILES_ARRAY[@]}
+          source: $MODIFIED_FILES_ARRAY
           exclude: "extern include"
           extensions: "h,cpp,c,hlsl,hlsli"
           clangFormatVersion: 16
