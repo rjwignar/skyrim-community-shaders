@@ -75,7 +75,7 @@ jobs:
           changedFiles: ${{env.my_changed_files}}
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
-          source: ${{ steps.changed-files.outputs.all_changed_files }}
+          source: "${{ steps.changed-files.outputs.all_changed_files }}"
           # source: ${{env.my_changed_files}}
           # source: ${{changedFiles}}
           # source: ARGS
