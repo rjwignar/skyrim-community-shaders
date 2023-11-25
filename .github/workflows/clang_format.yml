@@ -41,6 +41,7 @@ jobs:
             **/*.hlsli
       - name: List all changed files
         run: |
+          echo ${{ steps.changed-files.outputs.all_changed_files }}
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
