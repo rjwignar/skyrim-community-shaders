@@ -50,7 +50,7 @@ jobs:
           ALL_CHANGED_FILES=(${{ steps.changed-files.outputs.all_changed_files }})
           PROCESS_OUTPUT=""
           for file in "${ALL_CHANGED_FILES[@]}"; do
-            PROCESS_OUTPUT+="$file"
+            PROCESS_OUTPUT+=" $file"
           done
 
           echo $PROCESS_OUTPUT
