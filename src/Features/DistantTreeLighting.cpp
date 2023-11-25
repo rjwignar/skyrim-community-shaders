@@ -56,6 +56,7 @@ void DistantTreeLighting::DrawSettings()
 			ImGui::EndTooltip();
 		}
 
+
 		ImGui::Spacing();
 		ImGui::Spacing();
 		ImGui::TreePop();
