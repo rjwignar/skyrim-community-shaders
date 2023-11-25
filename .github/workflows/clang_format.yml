@@ -65,6 +65,10 @@ jobs:
           echo "::set-outputs name=all_changed_files::${CHANGED_FILES}"
           echo ${{ steps.changed-files.outputs.all_changed_files }}
           echo ${{env.my_changed_files}}
+
+      - name: test
+        run: |
+          echo "${{steps.changed-files.outputs.all_changed_files}}"
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
