@@ -54,7 +54,7 @@ jobs:
 
           PROCESS_OUTPUT=""
           for ((i=0; i<${LIST_LENGTH}; i++)); do
-            PROCESS_OUTPUT+=ALL_CHANGED_FILES[$i]
+            PROCESS_OUTPUT+=${ALL_CHANGED_FILES[$i]}
             if [ $i -ne $LIST_LENGTH - 1 )) ]; then
               PROCESS_OUTPUT+=' '
             fi
