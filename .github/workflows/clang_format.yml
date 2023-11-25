@@ -57,7 +57,7 @@ jobs:
             CHANGED_FILES+=\"\"
             CHANGED_FILES+=' '
           done
-          CHANGED_FILES="${CHANGED_FILES//\"/'%22'}"
+          # CHANGED_FILES="${CHANGED_FILES//\"/'%22'}"
           unset IFS
 
           echo "my_changed_files=$CHANGED_FILES" >> "$GITHUB_ENV"
