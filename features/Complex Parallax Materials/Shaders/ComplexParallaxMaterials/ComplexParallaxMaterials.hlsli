@@ -17,7 +17,6 @@ struct PerPassParallax
 	uint ShadowsEndFade;
 };
 
-
 StructuredBuffer<PerPassParallax> perPassParallax : register(t30);
 
 #include "ComplexParallaxMaterials/CRPM.hlsli"
