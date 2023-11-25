@@ -39,6 +39,7 @@ jobs:
             src/Features/*.h
             **/*.hlsl
             **/*.hlsli
+          separator: ","
       - name: List all changed files
         run: |
           echo ${{ steps.changed-files.outputs.all_changed_files }}
