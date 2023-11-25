@@ -54,7 +54,7 @@ jobs:
             PROCESS_OUTPUT+="$file "
           done
 
-          ALL_CHANGED_FILES="${ALL_CHANGED_FILES// /\\ }"
+          ALL_CHANGED_FILES[@]="${ALL_CHANGED_FILES[@]// /\\ }"
           echo ${ALL_CHANGED_FILES[@]}
           echo $PROCESS_OUTPUT
 
