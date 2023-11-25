@@ -43,7 +43,6 @@ void DistantTreeLighting::DrawSettings()
 		ImGui::TreePop();
 	}
 
-
 	if (ImGui::TreeNodeEx("Effects", ImGuiTreeNodeFlags_DefaultOpen)) {
 		ImGui::SliderFloat("SSS Amount", &settings.SubsurfaceScatteringAmount, 0.0f, 1.0f);
 		if (ImGui::IsItemHovered()) {

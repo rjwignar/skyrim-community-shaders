@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - dev
+      - issue-128-cpp-source
   pull_request_target:
     branches:
       - main
       - dev
+      - issue-128-cpp-source
   workflow_dispatch:
 
 jobs:
