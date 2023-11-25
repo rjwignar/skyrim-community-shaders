@@ -57,17 +57,24 @@ jobs:
 
           PROCESS_OUTPUT=""
 
-          for (( i=0; i<${LIST_LENGTH}; i++ ));
-          do
-            PROCESS_OUTPUT+=\'\'\'\'\'\'\'
-            PROCESS_OUTPUT+="${ALL_CHANGED_FILES[$i]}"
-            if [[ $i != "$(($LIST_LENGTH - 1))" ]];
-            then
-              PROCESS_OUTPUT+=' '
-            fi
-          done
-          echo $PROCESS_OUTPUT
+          # for (( i=0; i<${LIST_LENGTH}; i++ ));
+          # do
+          #   PROCESS_OUTPUT+=\'
+          #   PROCESS_OUTPUT+="${ALL_CHANGED_FILES[$i]}"
+          #   if [[ $i != "$(($LIST_LENGTH - 1))" ]];
+          #   then
+          #     PROCESS_OUTPUT+=' '
+          #   fi
+          # done
+          # echo $PROCESS_OUTPUT
 
+          IFS=$','
+          for file in $(echo )
+
+          IFS=$',' read -a MODIFIED_FILES_ARRAY <<< "${{ steps.changed-files.outputs.all_changed_files }}"
+          for file in "${MODIFIED_FILES_ARRAY[@]}"; do
+            echo $file
+          done
           PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
           echo $PROCESS_OUTPUT
 
