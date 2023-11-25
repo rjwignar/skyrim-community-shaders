@@ -72,9 +72,16 @@ jobs:
           LEN=${#MODIFIED_FILES_ARRAY[*]}
           echo $LEN
           for (( i=0; i<${LEN}; i++ )); do
+            PROCESS_OUTPUT+=\'
+            PROCESS_OUTPUT+="${MODIFIED_FILES_ARRAY[$i]}"
+            PROCESS_OUTPUT+=\'
             echo "${MODIFIED_FILES_ARRAY[$i]}"
+              if [[ $i != "$(($LEN - 1))" ]];
+              then
+                PROCESS_OUTPUT+=' '
+              fi
           done
-          PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
+          # PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
           echo $PROCESS_OUTPUT
 
           echo "::set-outputs name=changed_files::${PROCESS_OUTPUT}"
