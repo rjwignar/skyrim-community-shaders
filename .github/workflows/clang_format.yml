@@ -70,7 +70,7 @@ jobs:
           echo "::set-outputs name=all_changed_files::${PROCESS_OUTPUT}"
           echo ${{ steps.changed-files.outputs.all_changed_files }}
 
-          echo "my_changed_files=${PROCESS_OUTPUT}""
+          echo "my_changed_files=${PROCESS_OUTPUT}"
           echo "my_changed_files=${my_changed_files}" >> "$GITHUB_ENV"
           echo ${{env.my_changed_files}}
       - name: Format changed files
