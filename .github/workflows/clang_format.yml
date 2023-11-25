@@ -47,7 +47,7 @@ jobs:
             echo "$file was changed"
           done
 
-          export PROCESS_OUTPUT=${{ steps.changed-files.outputs.all_changed_files }}
+          PROCESS_OUTPUT=(${{ steps.changed-files.outputs.all_changed_files }})
           echo $PROCESS_OUTPUT
 
       - name: Format changed files
