@@ -41,6 +41,7 @@ jobs:
             **/*.hlsli
           separator: ","
       - name: List all changed files
+        id: process-list
         run: |
           echo ${{ steps.changed-files.outputs.all_changed_files }}
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
@@ -71,14 +72,15 @@ jobs:
           echo ${{ steps.changed-files.outputs.all_changed_files }}
 
           echo "my_changed_files=${PROCESS_OUTPUT}"
-          echo "changed_files=${my_changed_files}" >> "$GITHUB_ENV"
+          echo "changed_files=${my_changed_files}" >> "$GITHUB_OUTPUT"
           echo "$changed_files"
+          echo ${{ env.changed_files }}
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
           # source: ${{ steps.changed-files.outputs.all_changed_files }}
-          source: ${{ env.changed_files }}
+          source: ${{ steps.process-list.outputs.SELECTED_COLOR }}
           exclude: "extern include"
           extensions: "h,cpp,c,hlsl,hlsli"
           clangFormatVersion: 16
