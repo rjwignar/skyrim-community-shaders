@@ -16,6 +16,8 @@ on:
 jobs:
   format:
     runs-on: ubuntu-latest
+    outputs:
+      changed_files: ${{ steps.process-list.outputs.changed_files}}
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
@@ -68,7 +70,7 @@ jobs:
           PROCESS_OUTPUT="${PROCESS_OUTPUT// /\3\33 }"
           echo $PROCESS_OUTPUT
 
-          echo "::set-outputs name=all_changed_files::${PROCESS_OUTPUT}"
+          echo "::set-outputs name=changed_files::${PROCESS_OUTPUT}"
           echo ${{ steps.changed-files.outputs.all_changed_files }}
 
           my_changed_files=""
@@ -80,8 +82,8 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
         with:
-          source: ${{ steps.process-list.outputs.all_changed_files }}
-          # source: ${{ steps.process-list.outputs.changed_files }}
+          # source: ${{ steps.process-list.outputs.all_changed_files }}
+          source: ${{ steps.process-list.outputs.changed_files }}
           exclude: "extern include"
           extensions: "h,cpp,c,hlsl,hlsli"
           clangFormatVersion: 16
