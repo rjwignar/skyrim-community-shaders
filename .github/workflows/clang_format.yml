@@ -70,7 +70,7 @@ jobs:
           PROCESS_OUTPUT="${PROCESS_OUTPUT// /\3\33 }"
           echo $PROCESS_OUTPUT
 
-          echo "::set-outputs name=changed_files::${PROCESS_OUTPUT}"
+          echo "::set-output name=changed_files::${PROCESS_OUTPUT}"
           echo ${{ steps.changed-files.outputs.all_changed_files }}
 
           my_changed_files=""
