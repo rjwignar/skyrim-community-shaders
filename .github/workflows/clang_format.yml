@@ -47,12 +47,17 @@ jobs:
             echo "$file was changed"
           done
 
-          PROCESS_OUTPUT=(${{ steps.changed-files.outputs.all_changed_files }})
+          ALL_CHANGED_FILES=(${{ steps.changed-files.outputs.all_changed_files }})
+          PROCESS_OUTPUT=""
+          for file in "${ALL_CHANGED_FILES[@]}"; do
+            PROCESS_OUTPUT+="-f $file"
+          done
+          
           echo $PROCESS_OUTPUT
 
           PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
           echo $PROCESS_OUTPUT
-          
+
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
