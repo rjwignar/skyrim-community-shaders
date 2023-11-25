@@ -82,7 +82,7 @@ jobs:
               fi
           done
           #PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
-          PROCESS_OUTPUT="${PROCESS_OUTPUT// /'%20' }"
+          PROCESS_OUTPUT="${PROCESS_OUTPUT// /'%20'}"
           echo $PROCESS_OUTPUT
 
           echo "::set-outputs name=changed_files::${PROCESS_OUTPUT}"
