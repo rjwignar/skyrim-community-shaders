@@ -50,6 +50,9 @@ jobs:
           PROCESS_OUTPUT=(${{ steps.changed-files.outputs.all_changed_files }})
           echo $PROCESS_OUTPUT
 
+          PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
+          echo $PROCESS_OUTPUT
+          
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: DoozyX/clang-format-lint-action@v0.16.2
