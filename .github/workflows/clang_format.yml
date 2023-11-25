@@ -60,8 +60,6 @@ jobs:
             fi
           done
 
-          ALL_CHANGED_FILES[@]="${ALL_CHANGED_FILES[@]// /\\ }"
-          echo ${ALL_CHANGED_FILES[@]}
           echo $PROCESS_OUTPUT
 
           PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
