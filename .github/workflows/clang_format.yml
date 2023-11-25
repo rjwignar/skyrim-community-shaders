@@ -48,10 +48,13 @@ jobs:
           done
 
           ALL_CHANGED_FILES=(${{ steps.changed-files.outputs.all_changed_files }})
-          echo ${ALL_CHANGED_FILES[@]}
+          echo "${ALL_CHANGED_FILES[@]}
           PROCESS_OUTPUT=""
-          for file in "${ALL_CHANGED_FILES[@]}"; do
-            PROCESS_OUTPUT+="$file "
+          for ((i=0; i<${#ALL_CHANGED_FILES[@]}; i++)); do
+            PROCESS_OUTPUT+=ALL_CHANGED_FILES[$i]
+            if [ $i -ne $(( ${#ALL_CHANGED_FILES[@]} - 1 )) ]; then
+              PROCESS_OUTPUT+=" "
+            fi
           done
 
           ALL_CHANGED_FILES[@]="${ALL_CHANGED_FILES[@]// /\\ }"
