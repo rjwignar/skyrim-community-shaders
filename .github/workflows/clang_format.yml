@@ -63,7 +63,7 @@ jobs:
           echo "my_changed_files=$CHANGED_FILES" >> "$GITHUB_ENV"
           echo $CHANGED_FILES > modified_files.txt
           echo "::set-outputs name=all_changed_files::$CHANGED_FILES"
-          echo ${{ steps.changed-files.outputs.all_changed_files }}
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
           echo "${{env.my_changed_files}}"
 
       - name: test
