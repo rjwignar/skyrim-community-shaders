@@ -68,9 +68,6 @@ jobs:
           # done
           # echo $PROCESS_OUTPUT
 
-          IFS=$','
-          for file in $(echo )
-
           IFS=$',' read -a MODIFIED_FILES_ARRAY <<< "${{ steps.changed-files.outputs.all_changed_files }}"
           for file in "${MODIFIED_FILES_ARRAY[@]}"; do
             echo $file
