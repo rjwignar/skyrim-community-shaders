@@ -67,7 +67,7 @@ jobs:
           done
           echo $PROCESS_OUTPUT
 
-          PROCESS_OUTPUT="${PROCESS_OUTPUT// /\3\33 }"
+          PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
           echo $PROCESS_OUTPUT
 
           echo "::set-outputs name=changed_files::${PROCESS_OUTPUT}"
