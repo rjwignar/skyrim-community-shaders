@@ -48,7 +48,7 @@ jobs:
           done
 
           ALL_CHANGED_FILES=(${{ steps.changed-files.outputs.all_changed_files }})
-          echo "${ALL_CHANGED_FILES[@]}
+          echo "${ALL_CHANGED_FILES[@]}"
           LIST_LENGTH=${#ALL_CHANGED_FILES[*]}
           echo $LIST_LENGTH
 
