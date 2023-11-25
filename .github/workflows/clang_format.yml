@@ -57,10 +57,10 @@ jobs:
           for (( i=0; i<${LIST_LENGTH}; i++ ));
           do
             PROCESS_OUTPUT+="${ALL_CHANGED_FILES[$i]}""
-            if [[ $i != "$(($LIST_LENGTH - 1))" ]];
-            then
-              PROCESS_OUTPUT+=' '
-            fi
+            # if [[ $i != "$(($LIST_LENGTH - 1))" ]];
+            # then
+            #   PROCESS_OUTPUT+=' '
+            # fi
           done
           echo $PROCESS_OUTPUT
 
