@@ -69,7 +69,9 @@ jobs:
           # echo $PROCESS_OUTPUT
 
           IFS=$',' read -a MODIFIED_FILES_ARRAY <<< "${{ steps.changed-files.outputs.all_changed_files }}"
-          for (( i=0; i<${LIST_LENGTH}; i++ )); do
+          LEN=${#MODIFIED_FILES_ARRAY[*]}
+          echo $LEN
+          for (( i=0; i<${LEN}; i++ )); do
             echo "${MODIFIED_FILES_ARRAY[$i]}"
           done
           PROCESS_OUTPUT="${PROCESS_OUTPUT// /\\ }"
