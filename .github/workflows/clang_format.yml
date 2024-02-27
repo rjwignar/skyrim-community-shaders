@@ -45,7 +45,7 @@ jobs:
           done
       - uses: DoozyX/clang-format-lint-action@v0.17
         with:
-          source: "."
+          source: "${{ steps.changed-files.outputs.all_changed_files }}"
           exclude: "extern include"
           extensions: "h,cpp,c,hlsl,hlsli"
           clangFormatVersion: 16
