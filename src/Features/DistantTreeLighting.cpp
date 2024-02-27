@@ -11,7 +11,6 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(
 
 void DistantTreeLighting::DrawSettings()
 {
-
 	if (ImGui::TreeNodeEx("Complex Tree LOD", ImGuiTreeNodeFlags_DefaultOpen)) {
 		ImGui::Checkbox("Enable Complex Tree LOD", (bool*)&settings.EnableComplexTreeLOD);
 		if (auto _tt = Util::HoverTooltipWrapper()) {
