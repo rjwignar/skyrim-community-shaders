@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - dev
+      - rjwignar/issue-128-test
   pull_request_target:
     branches:
       - main
