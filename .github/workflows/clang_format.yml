@@ -47,7 +47,7 @@ jobs:
       - name: Process list of changed files
         id: process-list
         run: |
-          CHANGED_FILES=(${{ steps.changed-files.outputs.all_changed_files }})
+          CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
           CHANGED_FILES="${CHANGED_FILES// /\\ }"
           CHANGED_FILES="${CHANGED_FILES//, / }"
           echo $CHANGED_FILES
