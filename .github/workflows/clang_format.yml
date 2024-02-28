@@ -49,7 +49,7 @@ jobs:
         run: |
           CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
           CHANGED_FILES="${CHANGED_FILES// /\\ }"
-          echo "$CHANGED_FILES" | tr ',' ' '
+          CHANGED_FILES=$(echo "$CHANGED_FILES" | tr ',' ' ')
           echo $CHANGED_FILES
           echo "::set-outputs name=changed_files::${CHANGED_FILES}"
       - name: Format changed files
