@@ -5,7 +5,6 @@
 
 struct DistantTreeLighting : Feature
 {
-	// comment
 	static DistantTreeLighting* GetSingleton()
 	{
 		static DistantTreeLighting singleton;
