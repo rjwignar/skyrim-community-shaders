@@ -39,11 +39,6 @@ jobs:
             **/*.hlsl
             **/*.hlsli
           separator: ","
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
       - name: Process list of changed files
         id: process-list
         run: |
