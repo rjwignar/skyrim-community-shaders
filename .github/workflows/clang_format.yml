@@ -39,7 +39,7 @@ jobs:
             **/*.hlsl
             **/*.hlsli
           separator: ","
-      - name: Process list of changed files
+      - name: Process changed files list
         id: process-list
         run: |
           CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
