@@ -1,7 +1,6 @@
 
 struct PerPassParallax
-{\
-	// comment
+{  // comment
 	bool EnableComplexMaterial;
 
 	bool EnableParallax;
