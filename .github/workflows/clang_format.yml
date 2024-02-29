@@ -45,7 +45,6 @@ jobs:
           CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
           CHANGED_FILES="${CHANGED_FILES// /\\ }"
           CHANGED_FILES=$(echo "$CHANGED_FILES" | tr ',' ' ')
-          echo $CHANGED_FILES
           echo "::set-output name=changed_files::${CHANGED_FILES}"
       - name: Format changed files
         if: steps.changed-files.outputs.any_changed == 'true'
