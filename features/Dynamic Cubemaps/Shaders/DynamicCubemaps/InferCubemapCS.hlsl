@@ -10,7 +10,6 @@ SamplerState LinearSampler : register(s0);
 // this particular fragment in a cubemap.
 float3 GetSamplingVector(uint3 ThreadID, in RWTexture2DArray<float4> OutputTexture)
 {
-	// comment
 	float width = 0.0f;
 	float height = 0.0f;
 	float depth = 0.0f;
