@@ -9,7 +9,7 @@ using namespace ENB_SDK;
 
 namespace ENB_API
 {
-	
+
 	// Available ENBSeries SDK versions
 	enum class SDKVersion : long
 	{

@@ -6,7 +6,7 @@
 
 namespace ENB_SDK
 {
-	
+
 	enum class ENBParameterType : long
 	{
 		ENBParam_NONE = 0,                //invalid
