@@ -7,6 +7,7 @@ void ParticleLights::GetConfigs()
 	if (std::filesystem::exists("Data\\ParticleLights")) {
 		logger::info("[LLF] Loading particle lights configs");
 
+
 		auto configs = clib_util::distribution::get_configs("Data\\ParticleLights", "", ".ini");
 
 		if (configs.empty()) {

@@ -12,6 +12,7 @@ class Menu
 {
 public:
 	~Menu();
+	
 
 	static Menu* GetSingleton()
 	{

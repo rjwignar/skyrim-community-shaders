@@ -9,6 +9,7 @@ public:
 		return &singleton;
 	}
 
+
 	enum class Flicker
 	{
 		None = 0,
