@@ -8,7 +8,6 @@ class MenuOpenCloseEventHandler : public RE::BSTEventSink<RE::MenuOpenCloseEvent
 public:
 	virtual RE::BSEventNotifyControl ProcessEvent(const RE::MenuOpenCloseEvent* a_event, RE::BSTEventSource<RE::MenuOpenCloseEvent>* a_eventSource);
 	static bool Register();
-	
 };
 
 struct DynamicCubemaps : Feature

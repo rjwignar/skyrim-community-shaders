@@ -8,7 +8,7 @@ struct CloudShadows : Feature
 	static CloudShadows* GetSingleton()
 	{
 		static CloudShadows singleton;
-		
+
 		return &singleton;
 	}
 

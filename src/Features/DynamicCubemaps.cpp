@@ -15,7 +15,6 @@ void DynamicCubemaps::DrawSettings()
 						if (auto _tt = Util::HoverTooltipWrapper()) {
 							//ImGui::Text(fmt::format(fmt::runtime("{} {0:x}"), settingName, &setting->data.b).c_str());
 							ImGui::Text(settingName.c_str());
-							
 						}
 					}
 				}
