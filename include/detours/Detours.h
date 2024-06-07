@@ -6,6 +6,7 @@ namespace Detours
 {
 	static_assert(sizeof(uintptr_t) == sizeof(void*));
 
+
 	const static uint32_t DISASM_MAX_INSTRUCTIONS = 50;  // Maximum number of instructions to decode at once
 
 	const static uint32_t OPT_MASK = 0xFFF;             // Mask for all options

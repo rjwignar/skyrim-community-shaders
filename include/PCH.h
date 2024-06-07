@@ -5,6 +5,7 @@ void* operator new[](size_t size, const char* pName, int flags, unsigned debugFl
 void* operator new[](size_t size, size_t alignment, size_t alignmentOffset, const char* pName, int flags,
 	unsigned debugFlags, const char* file, int line);
 
+
 #pragma warning(push)
 #if defined(FALLOUT4)
 #	include "F4SE/F4SE.h"
